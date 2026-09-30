@@ -37,3 +37,10 @@ the required environment variables and apply migrations before running
 Create a Render PostgreSQL database and configure `DATABASE_URL`, `JWT_SECRET`,
 and `PORT` in the web service environment. Use `npm install && npm run prisma:generate`
 as the build command and `npm run db:migrate && npm start` as the start command.
+
+## Frontend prototype
+
+The responsive Daymark UI is a frontend-only prototype. Start it with
+`npm run dev` and create a production bundle with `npm run build`. Sign-in and
+registration are simulated in local app state; the task dashboard uses mock
+data and keeps create, edit, completion, and delete changes in memory only.
