@@ -1,41 +1,25 @@
-
-
-1. Backend Technology Stack
-- Runtime: Node.js (v18+)
-- Framework: Express.js
-- Language: JavaScript / CommonJS
-- Authentication: JSON Web Tokens (JWT) and bcrypt for password hashing
-- Testing: Jest and Supertest
-
-2. Frontend Technology Stack
+1. Technology Stack
 - Framework: React (v18+) initialized via Vite
 - Language: JavaScript (ES6+)
 - Styling: Tailwind CSS
-- State Management & Routing: React Context API and React Router
-- API Client: Fetch API or Axios
-- Testing: Vitest and React Testing Library
+- State Management: React Context API (for local prototype state)
+- Routing: React Router
+- Data: Local mock data (no backend API calls)
 
-3. Database Architecture
-- Database: PostgreSQL
-- ORM: Prisma
-- Models required:
-  - User: id (UUID), email (String, unique), password_hash (String), created_at (DateTime).
-  - Task: id (UUID), title (String), description (String), status (String, default: 'pending'), due_date (DateTime), user_id (UUID, relation to User).
+2. Architecture & Scope
+- Scope: Frontend UI Prototype ONLY. 
+- Backend: None. Do not write server-side Node.js, Express, or database schemas.
+- Data Handling: Use hardcoded arrays/objects in state to simulate tasks and users.
 
-4. Deployment Targets
-- Backend Hosting: Render (Web Service)
-- Database Hosting: Render PostgreSQL
-- Frontend Hosting: Vercel (or Render Static Site)
-- Environment Variables required: DATABASE_URL, JWT_SECRET, PORT, VITE_API_BASE_URL
+3. Deployment Targets
+- Deployment: None. Local development environment only.
 
-5. Design & Architecture Rules
-- Use standard RESTful routing conventions (e.g., POST /api/users/register, GET /api/tasks).
-- Protect all backend task routes using JWT authentication middleware.
-- All backend responses must return standard JSON (e.g., { "success": true, "data": ... } or { "success": false, "error": ... }).
-- Frontend must implement responsive design and securely store the JWT (e.g., HttpOnly cookies or secure local storage).
-- Frontend must handle and display loading states and API error messages gracefully.
+4. Design & Architecture Rules
+- Build a responsive layout focusing on user experience.
+- Implement UI states for Loading, Error, and Empty states using simulated delays if necessary.
+- Form submissions (like Login or Create Task) should update local React state and prevent default page reloads, rather than making HTTP requests.
 
-6. Source Control
+5. Source Control
 - Repository: https://github.com/akntara/Software-factory.git
 - Primary Branch: main
-- Working Branch: feature/frontend-initial-build
+- Working Branch: feature/ui-prototype
